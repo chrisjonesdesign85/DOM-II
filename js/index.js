@@ -16,16 +16,12 @@ function keyFunction() {
 }
 
 
-
 //wheel
 document.querySelector('body > div > header > p').addEventListener("wheel", myFunction)
 
 function myFunction() {
     this.style.fontSize = "35px"
 }
-
-
-//drag / drop
 
 
 //load
@@ -42,6 +38,7 @@ function foFunction() {
     this.style.fontSize = "35px"
 }
 
+
 //resize
 window.addEventListener("resize", sizeFunction)
 
@@ -50,20 +47,53 @@ function sizeFunction() {
 }
 
 
-//scroll
+//mouseDown / mouseUp
+let mDown = document.querySelector('body > div > header > img')
+mDown.addEventListener("mousedown", downFunc);
+mDown.addEventListener("mouseup", upFunc);
 
-
-
-//select
-function mySelectFunction() {
-    document.getElementsByClassName("footer").select();
+function downFunc() {
+    document.body.style.background = 'yellow';
 }
 
-function myAlertFunction() {
-    alert("you selected some text bro!");
+function upFunc() {
+    document.body.style.background = "lightgrey"
 }
 
-//man... been trying this for over an hour, and just saw that Supported HTML tags:	<input type="file">, <input type="password">, <input type="text">, and <textarea> and there is no input or text field on the website i have been trying to select <p> or <div>... SMH!!!!!!!!!!
+
+//focusin
+document.querySelector('body > header > div > nav > a:nth-child(2)').addEventListener("focusin", focusinFunc)
+
+function focusinFunc() {
+    document.body.style.background = 'purple';
+
+}
+
+
+//focusout
+document.querySelector('body > header > div > nav > a:nth-child(2)').addEventListener("focusout", focusoutFunc)
+
+function focusoutFunc() {
+    document.body.style.background = 'lightgrey';
+}
+
+
+//mouseenter / mouseleave
+mouseFoot = document.querySelector('body > footer')
+document.querySelector('body > footer').addEventListener("mouseenter", mouseEnter);
+document.querySelector('body > footer').addEventListener("mouseleave", mouseLeave);
+
+function mouseEnter() {
+    mouseFoot.style.background = "red"
+    document.querySelector('body > footer > p').style.color = "white"
+    document.querySelector('body > footer > p').style.fontSize = "35px"
+}
+
+function mouseLeave() {
+    mouseFoot.style.background = "#FFEBCD"
+    document.querySelector('body > footer > p').style.color = "black"
+    document.querySelector('body > footer > p').style.fontSize = "16px"
+}
 
 
 //dblclick
@@ -74,6 +104,8 @@ function doubleClk() {
     this.innerHTML = "Converted to Binary :) 01000001 01100100 01110110 01100101 01101110 01110100 01110101 01110010 01100101 00100000 01110111 01100101 01100010 01100100 01100101 01110011 01101001 01100111 01101110 00100000 01110000 01110010 01100101 01110100 01110100 01111001 00100000 01100100 01100101 01110011 01101001 01100111 01101110 00100000 01100100 01100101 01110011 01101001 01100111 01101110 00101100 00100000 01100101 01111000 01100011 01110101 01110010 01110011 01101001 01101111 01101110 00100000 01100011 01110101 01110100 01100101 00100000 01010111 01101111 01110010 01100100 01010000 01110010 01100101 01110011 01110011 00100000 01100010 01101100 01101111 01100111 01100111 01100101 01110010 00100000 01100100 01100101 01110011 01101001 01100111 01101110 00100000 01110111 01100101 01100010 01100100 01100101 01110011 01101001 01100111 01101110 00100000 01100001 01100100 01110110 01100101 01101110 01110100 01110101 01110010 01100101 00101110 00100000 01010000 01110010 01100101 01110100 01110100 01111001 00100000 01110011 01101001 01101101 01110000 01101100 01100101 00100000 01110100 01110010 01100001 01110110 01100101 01101100 01101001 01101110 01100111 00100000 01100110 01110101 01101110 00100000 01010111 01101111 01110010 01100100 01010000 01110010 01100101 01110011 01110011 00100000 01110111 01100001 01101110 01100100 01100101 01110010 01101100 01110101 01110011 01110100 00100000 01100100 01100001 01110010 01101110 00100000 01110011 01101001 01101101 01110000 01101100 01100101 00100000 01101111 01110010 01100111 01100001 01101110 01101001 01111010 01100101 01100100 00101110"
 }
 
+
+// can't get the below "dblClick" Event to work when I double click, it starts on page Load couldn't figure it out
 
 // document.querySelector(body > div > section:nth-child(2)).addEventListener("dblclick", change)
 // let i = 0;
@@ -87,3 +119,20 @@ function doubleClk() {
 
 // }
 // setInterval(change, 50);
+
+
+
+
+
+//select
+// function mySelectFunction() {
+//     document.getElementsByClassName("footer").select();
+// }
+
+// function myAlertFunction() {
+//     alert("you selected some text bro!");
+// }
+
+//I've been trying "select" for over an hour or more and, I just saw "Supported HTML tags:	<input type="file">, <input type="password">, <input type="text">, and <textarea>"" but there is no input or text field on the website i have been trying to select <p>'s or <div>'s... SMH
+
+//also just saw these Events are merely suggestions :D I thought we had to use the ones listed! HAHA
