@@ -55,12 +55,15 @@ function sizeFunction() {
 
 
 //select
-document.getElementByClass('footer')
-
-function selectFu() {
-    document.querySelector('body > footer > p').innerHTML = "You selected some text bro!"
+function mySelectFunction() {
+    document.getElementsByClassName("footer").select();
 }
 
+function myAlertFunction() {
+    alert("you selected some text bro!");
+}
+
+//man... been trying this for over an hour, and just saw that Supported HTML tags:	<input type="file">, <input type="password">, <input type="text">, and <textarea> and there is no input or text field on the website i have been trying to select <p> or <div>... SMH!!!!!!!!!!
 
 
 //dblclick
